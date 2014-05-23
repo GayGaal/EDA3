@@ -1,10 +1,10 @@
 ## This part of the script contains commands, similar for all the plots ##
 fileUrl <- "http://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"
 download.file(fileUrl, "data.zip")
-unzip("data.zip") ##marked as comments not to repeat it again - works
+unzip("data.zip") 
 ## reading the data
 NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds") ## once again
+SCC <- readRDS("Source_Classification_Code.rds") 
 ## getting the needed plotting data for plot 1
 plotData <- with(NEI, aggregate(Emissions ~ year, FUN=sum))
 plotData[,2] <- plotData[,2]/1000000
