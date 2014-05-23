@@ -9,7 +9,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 ## subsetting SCC list where source is coal combustion
 sccSubset <- as.character(subset(SCC, grepl("[Cc]oal", EI.Sector) & grepl("[Cc]ombustion", SCC.Level.One))[,1])
 ## subsetting NEI dataset based on SCC list
-coalData <- subset(NEI, SCC==sccSubset)
+coalData <- NEI[NEI$SCC %in% sccSubset,]
 ## calculating
 plotData <- with(coalData, aggregate(Emissions ~ year, FUN=sum))
 ## plotting the data directly to png
