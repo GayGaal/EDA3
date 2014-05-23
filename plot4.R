@@ -7,7 +7,7 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds") 
 ## getting the needed plotting data for plot 4
 ## subsetting SCC list where source is coal combustion
-sccSubset <- subset(SCC, grepl("[Cc]oal", EI.Sector) & grepl("[Cc]ombustion", SCC.Level.One))[,1]
+sccSubset <- as.character(subset(SCC, grepl("[Cc]oal", EI.Sector) & grepl("[Cc]ombustion", SCC.Level.One))[,1])
 ## subsetting NEI dataset based on SCC list
 coalData <- subset(NEI, SCC==sccSubset)
 ## calculating
