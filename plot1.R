@@ -11,5 +11,5 @@ plotData[,2] <- plotData[,2]/1000000
 ## plotting the data directly to png
 png(file="plot1.png", height=480, width=480)
 par(mar=rep(5,4))
-with(plotData, plot(year, Emissions, type="b", pch=19, lwd=2, col="red", ylab="Total Yearly Emissions in million tons"))
+with(plotData, plot(year, Emissions, type="b", pch=19, lwd=2, col="red", ylab="Total Yearly Emissions in million tons", main="Total PM25 Emissions in the USA by year"))
 dev.off()
